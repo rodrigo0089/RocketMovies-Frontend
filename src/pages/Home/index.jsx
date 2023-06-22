@@ -22,11 +22,11 @@ export function Home() {
   useEffect(() => {
     async function fetchMovies() {
       const response = await api.get(`/moviesNotes?title=${search}`);
-      setMovies(response.data);
+      setMovies(response.data)
     }
 
-    fetchMovies();
-  }, [search]);
+    fetchMovies()
+  }, [search])
 
   return (
     <Container>

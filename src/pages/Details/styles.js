@@ -5,60 +5,98 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 105px auto;
+  grid-template-rows: 116px auto;
   grid-template-areas:
-  "header"
-  "content";
-
+    "header"
+    "content";
+  
   > main {
     grid-area: content;
-    overflow-y: scroll;
-    padding: 64px 0;
+    overflow-y: auto;
 
+    width: 100%;
+    max-width: 1137px;
+    margin: 40px auto;
+
+    header {
+      display: flex;
+      flex-direction: column;
+
+      margin-bottom: 40px;
+
+      button {
+        background: none;
+			  border: none;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 24px;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+      }
+
+      .movie-info {
+        gap: 8px;
+        margin-top: 24px;
+
+        p:nth-child(1), div {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        img {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+        }
+
+        svg {
+          color: ${({ theme }) => theme.COLORS.PINK};
+        }
+        
+        .tag {
+          ${({ theme }) => theme.COLORS.PINK_200};
+        }
+      }
+
+      h1 {
+        font-weight: 500;
+        font-size: 36px;
+        margin-right: 19px;
+      }
+
+    }
+  
+    > p {
+      text-align: justify;
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      
+      margin-top: 40px;
+      max-width: calc(100% - 8px);
+      
+      line-height: 21px;
+    }
+
+    button {
+      background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+      color: ${({ theme }) => theme.COLORS.PINK};
+
+      width: calc(50% - 20px);
+      margin-top: 40px;
+    }
   }
-`;
 
-export const Content = styled.div`
-  max-width: 1113px;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-
-  > button:first-child {
-    align-self: end;
+  > main::-webkit-scrollbar {
+    width: 8px;
   }
-
-  > h1 {
-      font-size: 36px;
-      font-weight: 500;
-      padding: 24px 0;
+  
+  > main::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.COLORS.PINK};
+    border-radius: 8px;
   }
-
-  > p {
-    font-size: 16px;
-    margin-top: 16px;
-    text-align: justify;
-  }
-
-  > a {
-    font-size: 20px;
-    color: ${({ theme }) => theme.COLORS.PINK};
-
-    list-style: none;
-
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    margin-top: 12px;
-  }
-
-  .tags{
-    display: flex;
-    gap: 8px;
-    margin-bottom: 40px;
-  }
-
-
 `;

@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   
   background-color: ${({ theme, isNew }) =>
-    isNew ? "transparent" : theme.COLORS.BACKGROUND_700};
+    isNew ? "transparent" : theme.COLORS.BACKGROUND_600};
   border: ${({ theme, isNew }) =>
     isNew ? `1px dashed ${theme.COLORS.GRAY_200}` : "none"};
 
@@ -13,6 +13,10 @@ export const Container = styled.div`
   margin-right: 24px;
   border-radius: 10px;
   padding-right: 16px;
+
+  svg {
+    font-size: 20px;
+  }
 
   > button {
     border: none;
